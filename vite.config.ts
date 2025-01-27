@@ -9,8 +9,18 @@ export default defineConfig({
       "@": "/src",
     },
   },
-  server: {
-    host: '0.0.0.0', // Escuchar en todas las direcciones
-    port: process.env.PORT || 5173,  // Puerto dinámico si no se asigna otro
+  build: {
+    rollupOptions: {
+      onwarn(warning, warn) {
+        // Ignorar advertencias específicas
+        if (warning.code === 'UNUSED_EXTERNAL') {
+          return; // Ignorar esta advertencia específica
+        }
+        // Para ignorar todos los demás errores
+        warn(warning); // Mostrar advertencia pero continuar el build
+      },
+    },
+    minify: "esbuild",
+    sourcemap: false,
   },
 });

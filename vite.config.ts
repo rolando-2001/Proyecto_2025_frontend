@@ -9,4 +9,8 @@ export default defineConfig({
       "@": "/src",
     },
   },
+  server: {
+    host: '0.0.0.0', // Escuchar en todas las direcciones
+    port: 5173,       // O el puerto que prefieras
+  },
 });

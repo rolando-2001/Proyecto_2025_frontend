@@ -1,0 +1,23 @@
+.form {
+  @apply px-3 py-3
+/*       bg-white rounded-lg
+      shadow-xl
+      border-2 border-secondary */
+      flex flex-col;
+}
+
+.form .container {
+  @apply flex flex-col w-full mb-5;
+}
+
+.form .container label {
+  @apply text-tertiary text-[15px] font-bold mb-2;
+}
+
+.form .container small {
+  @apply text-red-500;
+}
+
+/* .form > button:last-child {
+  @apply rounded-md mt-auto;
+} */

@@ -11,6 +11,6 @@ export default defineConfig({
   },
   server: {
     host: '0.0.0.0', // Escuchar en todas las direcciones
-    port: 5173,       // O el puerto que prefieras
+    port: process.env.PORT || 5173,  // Puerto dinámico si no se asigna otro
   },
 });
